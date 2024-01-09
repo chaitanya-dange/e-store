@@ -7,6 +7,7 @@ import ContactUs from './pages/ContactUs';
 import DashBoard from './pages/user/DashBoard';
 import  Profile  from './pages/user/Profile';
 import NavBar from './components/NavBar';
+import Services from './pages/Services';
 
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
 
              <Route path='/about' element={<About/>}/>
              <Route  path='/contactus' element={<ContactUs/>}/>
+             <Route  path='/services' element={<Services/>}/>
+
 
 
              <Route path='/user' element={<DashBoard/>}>
