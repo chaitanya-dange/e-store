@@ -8,7 +8,7 @@ const DashBoard = () => {
       <div className="container">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, earum!
       </div>
-      
+      <Outlet/>
 
     </div>
   )

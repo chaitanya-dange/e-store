@@ -13,12 +13,15 @@ function App() {
     <>
     <BrowserRouter>
         <Routes>
+          
              <Route path='/about' element={<About/>}/>
              <Route  path='/contactus' element={<ContactUs/>}/>
 
+
              <Route path='/user' element={<DashBoard/>}>
-                <Route path='/user/profile' element={<Profile/>}/>
+                <Route path='profile' element={<Profile/>}/>
              </Route>
+
         </Routes>
     </BrowserRouter>
     </>
