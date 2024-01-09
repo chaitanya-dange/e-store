@@ -8,6 +8,7 @@ import DashBoard from './pages/user/DashBoard';
 import  Profile  from './pages/user/Profile';
 import NavBar from './components/NavBar';
 import Services from './pages/Services';
+import Index from './pages/Index';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <NavBar/>
         <Routes>
 
+             <Route path='/' element={<Index/>}/>
              <Route path='/about' element={<About/>}/>
              <Route  path='/contactus' element={<ContactUs/>}/>
              <Route  path='/services' element={<Services/>}/>
