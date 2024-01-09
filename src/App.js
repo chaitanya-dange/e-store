@@ -6,14 +6,16 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import ContactUs from './pages/ContactUs';
 import DashBoard from './pages/user/DashBoard';
 import  Profile  from './pages/user/Profile';
+import NavBar from './components/NavBar';
 
 
 function App() {
   return (
     <>
     <BrowserRouter>
+      <NavBar/>
         <Routes>
-          
+
              <Route path='/about' element={<About/>}/>
              <Route  path='/contactus' element={<ContactUs/>}/>
 
