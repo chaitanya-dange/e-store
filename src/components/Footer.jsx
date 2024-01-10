@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     
     <div>
-        <Container fluid  className=' bg-dark text-white fixed-bottom 'style={{ height: '100px' }} >
+        <Container fluid  className=' bg-dark text-white mt-2 'style={{ height: '100px' }} >
             this is footer
 
         </Container>

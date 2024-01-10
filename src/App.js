@@ -10,6 +10,8 @@ import NavBar from './components/NavBar';
 import Services from './pages/Services';
 import Index from './pages/Index';
 import { ToastContainer} from 'react-toastify';
+import Login from './components/Login';
+import Register from './components/Register';
 
 
 
@@ -22,6 +24,8 @@ function App() {
         <Routes>
 
           <Route path='/' element={<Index />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Register />} />
           <Route path='/about' element={<About />} />
           <Route path='/contactus' element={<ContactUs />} />
           <Route path='/services' element={<Services />} />

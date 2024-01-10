@@ -17,11 +17,11 @@ const Base = ({title="Default title", desc="Welcome to store",buttonEnable=false
             <p>{desc&&desc}</p>
             {/* {buttonEnable && <Button variant={buttonType}>{buttonText}</Button> } */}
 
-            {/* {buttonEnable && (
+            {buttonEnable && (
                 <Link to={to}><Button variant={buttonType}>{buttonText}</Button></Link>
-            )} */}
+            )}
 
-            {buttonEnable && <a as={NavLink} to={to}><Button variant={buttonType}>{buttonText}</Button></a> }
+            {/* {buttonEnable && <a as={NavLink} to={to}><Button variant={buttonType}>{buttonText}</Button></a> } */}
            
         </Container>
 
