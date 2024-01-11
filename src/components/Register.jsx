@@ -106,6 +106,7 @@ const Register = () => {
                                                 type="radio"
                                                 id={`inline-${"type"}-1`}
                                                 value={"m"}
+                                                checked={data.gender==='m'}
                                                 onChange={ (event) =>handleChange(event.target.value,"gender")}
                                             />
 
@@ -116,6 +117,7 @@ const Register = () => {
                                                 type="radio"
                                                 id={`inline-${"type"}-1`}
                                                 value={"f"}
+                                                checked={data.gender==='f'}
                                                 onChange={ (event) =>handleChange(event.target.value,"gender")}
                                             />
                                         </div>
