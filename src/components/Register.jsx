@@ -40,15 +40,12 @@ const Register = () => {
     
 
     let styleComponent = {
-        width: 600,
-        backgroundColor: 'gray',
-        marginTop: '-50px'
-
+        marginTop: '-100px'
     }
 
     const registrtnFrm = () => {
         return (
-            <Container fluid >
+            <Container fluid style={styleComponent} >
                 <Row>   {JSON.stringify(data)}
                     <Col sm={{ span: 6, offset: 3}}>
 
