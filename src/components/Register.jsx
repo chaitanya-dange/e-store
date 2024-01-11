@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Base from './Base'
 import { Container, Row, Col, Card, Button } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form';
@@ -6,6 +6,38 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { Link, NavLink } from 'react-router-dom';
 
 const Register = () => {
+
+    const [data,setData]= useState({
+        name:'',
+        email:'',
+        password:'',
+        cnfpassword:'',
+        about:'',
+        gender:''
+    })
+
+
+    const handleChange = (newValue ,fieldName ) => {
+        setData( (data )=> ({
+            ...data,
+            [fieldName]:newValue
+        }))
+
+    }
+
+    const clearData = () =>{
+        setData({
+            name:'',
+            email:'',
+            password:'',
+            cnfpassword:'',
+            about:'',
+            gender:''
+        }
+
+        )
+    }
+    
 
     let styleComponent = {
         width: 600,
@@ -17,7 +49,7 @@ const Register = () => {
     const registrtnFrm = () => {
         return (
             <Container fluid >
-                <Row>
+                <Row>   {JSON.stringify(data)}
                     <Col sm={{ span: 6, offset: 3}}>
 
                         <Card className=' border-0 shadow p-5'>
@@ -26,24 +58,41 @@ const Register = () => {
                                 <Form>
                                     <Form.Group className="mb-3" controlId="formBasicName">
                                         <Form.Label>Enter your name </Form.Label>
-                                        <Form.Control type="text" placeholder="Enter Name" />
+                                        <Form.Control
+                                         type="text"
+                                          placeholder="Enter Name"
+                                          value={data.name}
+                                          onChange={ (event) =>handleChange(event.target.value,"name")}
+                                        />
 
                                     </Form.Group>
 
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Email address</Form.Label>
-                                        <Form.Control type="email" placeholder="Enter email" />
+                                        <Form.Control
+                                         type="email"
+                                         placeholder="Enter email"
+                                         value={data.email}
+                                         onChange={ (event) =>handleChange(event.target.value,"email")} />
 
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicPasswrd">
                                         <Form.Label>Passwrd</Form.Label>
-                                        <Form.Control type="password" placeholder="Enter password" />
+                                        <Form.Control
+                                         type="password"
+                                         placeholder="Enter password"
+                                         value={data.password}
+                                         onChange={ (event) =>handleChange(event.target.value,"password")} />
 
                                     </Form.Group>
 
                                     <Form.Group className="mb-3" controlId="formBasicRePasswrd">
                                         <Form.Label>Re-enter Password</Form.Label>
-                                        <Form.Control type="password" placeholder="Enter password" />
+                                        <Form.Control 
+                                        type="password"
+                                        placeholder="Enter password"
+                                        value={data.cnfpassword}
+                                        onChange={ (event) =>handleChange(event.target.value,"cnfpassword")}  />
 
                                     </Form.Group>
 
@@ -56,6 +105,8 @@ const Register = () => {
                                                 name="gender"
                                                 type="radio"
                                                 id={`inline-${"type"}-1`}
+                                                value={"m"}
+                                                onChange={ (event) =>handleChange(event.target.value,"gender")}
                                             />
 
                                             <Form.Check
@@ -64,6 +115,8 @@ const Register = () => {
                                                 name="gender"
                                                 type="radio"
                                                 id={`inline-${"type"}-1`}
+                                                value={"f"}
+                                                onChange={ (event) =>handleChange(event.target.value,"gender")}
                                             />
                                         </div>
 
@@ -75,6 +128,8 @@ const Register = () => {
                                             as="textarea"
                                             placeholder="Leave a comment here"
                                             style={{ height: '200px' }}
+                                            value={data.about}
+                                            onChange={ (event) =>handleChange(event.target.value,"about")}
                                         />
                                     </Form.Group>
 
@@ -85,7 +140,7 @@ const Register = () => {
 
                                     <Container  className='text-center'>
                                         <Button inline className=' m-1 '>signup</Button>
-                                        <Button inline>reset</Button>
+                                        <Button inline onClick={clearData}>reset</Button>
                                     </Container>
 
                                 </Form>
